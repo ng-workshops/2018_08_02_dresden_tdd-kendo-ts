@@ -1,0 +1,28 @@
+{
+  "name": "tdd-kendo-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "npm run build && light-server -s . & opn http://127.0.0.1:4000/tests/SpecRunner.html & wait",
+    "tdd": "npm run build -- -w & light-server -s . -q -w \"**/*.js, **/*.html\" & opn http://127.0.0.1:4000/tests/SpecRunner.html & wait",
+    "start": "light-server -s . & opn http://127.0.0.1:4000/src/index.html & wait"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/jasmine": "2.8.8",
+    "@types/jquery": "3.3.5",
+    "jasmine-core": "3.1.0",
+    "light-server": "2.5.1",
+    "opn-cli": "3.1.0",
+    "requirejs": "2.3.5",
+    "tslib": "1.9.3",
+    "typescript": "2.9.2"
+  },
+  "dependencies": {
+    "@progress/kendo-ui": "2018.2.704",
+    "jszip": "3.1.5"
+  }
+}
