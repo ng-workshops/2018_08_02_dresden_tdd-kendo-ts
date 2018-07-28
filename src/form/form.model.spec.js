@@ -20,7 +20,12 @@ define([], function() {
       it('THEN a new item should be created', () => {
         expect(viewModel.get('amount')).toBeNull();
         viewModel.create.call(viewModel);
+
+        expect(viewModel.get('expenses').length).toBe(1);
+        expect(viewModel.get('expenses')[0].toJSON()).toEqual({ Type: 'food', Merchant: null, Amount: null });
         expect(viewModel.get('amount')).toBe('');
+        expect(viewModel.get('expenseType')).toBe('food');
+        expect(viewModel.get('merchant')).toBe('');
       });
     });
   });

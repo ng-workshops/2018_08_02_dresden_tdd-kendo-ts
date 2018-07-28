@@ -29,9 +29,12 @@ require.config({
   }
 });
 
+var DEPENDENCIES = ['jquery', 'jszip', 'kendo.all.min'];
+var SPECS = ['index.spec', 'form/form.model.spec', 'validation/validation.spec'];
+
 require(['jasmine-boot'], function() {
-  require(['jquery', 'jszip', 'kendo.all.min'], function() {
-    require(['index.spec', 'form/form.model.spec', 'validation/validation.spec'], function() {
+  require(DEPENDENCIES, function() {
+    require(SPECS, function() {
       //trigger Jasmine
       window.onload();
     });
